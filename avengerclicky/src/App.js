@@ -29,14 +29,14 @@ gameOver = () => {
 }
 
 clickCount = (id) => {
-  this.state.cards.find((o,i) => {
-    if (o.id === id) {
+  this.state.cards.find((card,i) => {
+    if (card.id === id) {
       if(cards[i].count ===0){
         cards[i].count = cards[i].count + 1;
         this.setState({score: this.state.score +1}, function(){
           console.log(this.state.score)
         });
-        this.state.cards.sort(()=> Math.random() - 0.5)
+        this.state.cards.sort(()=> Math.random()-0.75)
         return true;
       } else {
         this.gameOver();
@@ -51,7 +51,7 @@ clickCount = (id) => {
   render() {
     return (
      <Wrapper>
-       <Header score={this.state.score} topScore={this.state.topScore}></Header>
+       <Header score={this.state.score} topScore={this.state.topScore}>Only one click per Image</Header>
        {this.state.cards.map(card => (
          <Card clickCount={this.clickCount} id={card.id} key={card.id} image={card.image}/>
        ))}
