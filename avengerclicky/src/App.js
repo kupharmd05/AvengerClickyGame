@@ -16,13 +16,9 @@ state = {
 
 gameOver = () => {
   if(this.state.score > this.state.topScore) {
-    this.setState({topScore: this.state.score}, function(){
-      console.log(this.state.topScore)
-    })
+    this.setState({topScore: this.state.score})
   }
-  this.state.cards.forEach(card => {
-    card.count = 0;
-  })
+  this.state.cards.forEach(card => {card.count = 0})
   alert(`Game Over = Your score was ${this.state.score}`)
   this.setState({score: 0});
   return true;
@@ -31,7 +27,7 @@ gameOver = () => {
 clickCount = (id) => {
   this.state.cards.find((card,i) => {
     if (card.id === id) {
-      if(cards[i].count ===0){
+      if(cards[i].count === 0){
         cards[i].count = cards[i].count + 1;
         this.setState({score: this.state.score +1}, function(){
           console.log(this.state.score)

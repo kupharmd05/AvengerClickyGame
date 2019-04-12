@@ -1,14 +1,19 @@
-.header {
+.jumbotron {
     width: 100%;
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
+.col-md-4 {
+    align-self: center;
+    text-align: center;
+}
+
 .title {
-    float: left;
+    font-size: 1.5rem;
 }
 
 
-.scores {
-    float: right;
+.score {
+    font-size: 1.5rem;
 }
